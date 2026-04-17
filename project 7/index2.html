@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+</head>
+<body>
+    <button id="changeColor">Click me</button>
+    <p id="colorCode"></p>
+
+    <script>
+        document.getElementById("changeColor").addEventListener("click", function(){
+            // 1. Generate a random number, convert to Hexadecimal (base 16)
+            // 2. Pad with zeros if the string is shorter than 6 characters
+            const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+            
+            // 3. Corrected 'background' spelling
+            document.body.style.background = randomColor;
+            
+            // 4. Update the text to show the color code
+            document.getElementById("colorCode").innerText = randomColor;
+        })
+    </script>
+</body>
+</html>
